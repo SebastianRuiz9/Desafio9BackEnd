@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portada - Trabajo Práctico React</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #282c34; /* Color similar al fondo por defecto de React */
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #61dafb; /* Azul react */
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #bbb;
+            margin-bottom: 20px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .info-section {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .button-section {
+            text-align: left;
+            max-width: 600px;
+            margin: 120px auto;
+        }
+
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 10px;
+            border: 2px solid white;
+            border-radius: 8px;
+            padding: 5px;
+        }
+        .rectangular-button {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            font-family: 'Courier New', monospace;
+          }
+          
+          .rectangular-button:hover {
+            background-color: #0056b3;
+          }
+
+          .button-forms {
+            display: inline-block;
+            padding: 5px 20px;
+            margin: 10px 20px;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #007bff;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: 'Courier New', monospace;
+          }
+          
+          .button-forms:hover {
+            background-color: #0056b3;
+          }
+          
+
+          .item-test-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 10px auto;
+            font-family: 'Courier New', monospace;
+            color: #bbb;
+            border-bottom: 2px dashed green; 
+            padding: 15px;
+           
+          }
+
+          .formselect{
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 10px auto;
+            font-family: 'Courier New', monospace;
+            color: #bbb;
+            border-bottom: 2px dashed green; 
+            padding: 15px;
+          }
+
+    .my-form {
+        min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+            justify-content: center;
+            text-align: center;
+      margin: 20px auto;
+      padding-top: 20px;
+      background-color: transparent;
+
+      font-family: 'Courier New', monospace;
+      border-top: 2px dashed green; 
+      border-bottom: 2px dashed green; 
+    }
+
+    /* Estilos para los inputs */
+    .my-form-input {
+      width: 100%;
+      padding: 1px;
+      margin-top: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      font-family: 'Courier New', monospace;
+    }
+
+    /* Estilos para los botones */
+    .my-form-button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .my-form-button:hover {
+      background-color: #45a049;
+    }
+
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Curso Backend Coderhouse <br> Primer Preentrega</h1>
+    <p>Realizado por: Guillermo Guardia</p>
+
+    <div class="info-section">
+         <p>30-01-2024 </p>
+    </div>
+
+    <div class="logo-section">
+    <img class="logo" src="https://imgs.search.brave.com/fAr-gGV6LJ-jK-DGVAYQwz7xfNhw5fxLy9CjCKkA71E/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9zZWVr/bG9nby5jb20vaW1h/Z2VzL0ovamF2YXNj/cmlwdC1qcy1sb2dv/LTI5NDk3MDE3MDIt/c2Vla2xvZ28uY29t/LnBuZw" alt="JavaScript Logo">
+        <img class="logo" src="https://imgs.search.brave.com/tq3hucM-dRx8cLV-5lQQ5Qy22SzDqFN1foHTH9A2ZL8/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9zZWVr/bG9nby5jb20vaW1h/Z2VzL04vbm9kZWpz/LWxvZ28tRkJFMTIy/RTM3Ny1zZWVrbG9n/by5jb20ucG5n" alt="Node.js Logo">
+     
+    </div>
+    <div class="container">
+     
+         <form onSubmit="testIt(); return false;" id="test_form" class="my-form">
+            <label>Seleccionar test</label>
+            <select class="my-form-input" id="testSelector" onChange="changeSelect()">
+            <optgroup label="Products">
+                <option value="1" selected>GET'/api/products'.</option>
+                <option value="2">GET '/api/products/' con parametro limit=?. </option>
+                <option value="3">GET '/api/products/:pid'. </option>
+                <option value="4">POST'/api/products'.</option>
+                <option value="5">PUT '/api/products/:pid'.</option>
+                <option value="6">DELETE '/api/products/:pid'.</option>
+            </optgroup>
+            <optgroup label="Cart">
+                <option value="7">POST'/api/carts'.</option>
+                <option value="8">GET '/api/carts/:cid'. </option>
+                </optgroup>
+            <optgroup label="Carts and products">
+                <option value="9">POST'/api/carts/:cid/products/:pid'.</option>
+            </optgroup>
+            </select>
+            <br><br>
+         
+            <button id="form_button" type="submit" class="button-forms">Testear</button>
+          </form>
+          
+  </div>
+   
+     
+        <div>
+
+    </div>
+</div>
+
+
+<script>
+
+    function changeSelect(){
+     
+        const myForm = document.getElementById('test_form')
+        const selectedTest = document.getElementById('testSelector').value
+      clearForm()
+      
+        switch (selectedTest){
+            case "1": // 'api/products/'
+                //Elimino todos los input para parametros.
+                break
+            case "2":  // 'api/products/?limit='
+                //agrego el input para que se inserte el parametro limit.
+                agregarInputBeforeButton("number",'Ingresar parametro limit.','param1')
+                break
+            case "3": // 'api/products/:pid para GET, DELETE'
+            case "6":
+                agregarInputBeforeButton("number",'Ingresar parametro pid.','param1')
+                break
+            case "4": // Post products aca va a venir un objeto de javascript habra que validar y transfgormar
+                agregarInputBeforeButton("text",'Ingresar Campos en formato Objeto de JS.','param1')
+                alert('Generamos un producto al azar para agregar y lo metemos al input con el cual haremos la solicitud post!')
+                document.getElementById('param1').value = generarProducto()
+                break;
+            case "5":
+                 agregarInputBeforeButton("text",'Ingresar Campos en formato Objeto de JS.','param1')
+                break
+            case "8":
+                 agregarInputBeforeButton("number",'Ingresar parametro cid.','param1')
+                break
+            case "9": //POST'/api/carts/:cid/products/:pid'.
+                 agregarInputBeforeButton("number",'Ingresar parametro cid.','param1')
+                 agregarInputBeforeButton("number",'Ingresar parametro pid.','param2')
+                break
+            default:
+            break
+        }
+     
+    }
+
+    function agregarInputBeforeButton(type,placeholder,id){
+        const nodeButton = document.getElementById('form_button')
+        const myForm = document.getElementById('test_form')
+        const nuevoInput1 = document.createElement("input")
+        
+        nuevoInput1.id = id
+        nuevoInput1.type=type
+        nuevoInput1.placeholder=placeholder
+        nuevoInput1.className = "my-form-input"
+        nuevoInput1.required = true
+        myForm.insertBefore(nuevoInput1,nodeButton)
+    }
+
+    function clearForm(){
+        const myForm = document.getElementById('test_form')
+        const inputsExistentes = document.querySelectorAll('input')
+        //El tema aca es que me va a agarrar el input click y necesito sacarlo antes
+        //console.log('e',inputsExistentes, 'len: ',inputsExistentes.length)
+        if (inputsExistentes.length > 0) inputsExistentes.forEach(item => myForm.removeChild(item))
+    }
+
+       function solicitarGet(parametro,goToRef) {
+         let parametroValue = document.getElementById(parametro).value;
+         // Verifica que el parámetro no esté vacío antes de redirigir
+         if (parametroValue.trim() !== '') {
+           // Reemplaza :pid con el valor del parámetro y redirige
+           window.location.href = goToRef + encodeURIComponent(parametroValue);
+         } else {
+           alert('Por favor, ingresa un valor para el parámetro.');
+         }
+       }
+
+       function mostrarRespuesta(respuesta) {
+      // Mostrar la respuesta en el área designada
+      document.getElementById('respuesta').innerHTML = respuesta;
+    }
+
+    function postCart(){
+        //No me envian ningun parametro solo crea un carro asique viene sin parametyro
+        fetch('http://localhost:8080/api/carts/',{method:'POST'})
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error en la solicitud POST');
+                    }
+                    return response.json(); // O response.text(), según el formato de respuesta
+                })
+                .then(data => {
+                    console.log('Solicitud POST exitosa:', data);
+                    alert('Solicitud POST exitosa: ' + JSON.stringify(data));
+                })
+                .catch(error => {
+                    console.error('Error en la solicitud POST:', error.message);
+                    alert('Error en la solicitud POST: ' + error.message);
+      });
+    }
+
+    function generarProducto(){
+
+        const getRandomValue = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+        const numberForProduct = getRandomValue(100,200)
+        const price = getRandomValue(1000,20000)
+        const stock = getRandomValue(10,50)
+        
+        const oneProduct = {
+                "title": `One Product ${numberForProduct}`,
+                "description": `Descripcion Product ${numberForProduct}`,
+                "price": price,
+                "code": stock,
+                "stock": 'stu'+ numberForProduct.toString(),
+                "status": true,
+                "thumbnails": [
+                "\"https://ejemplo.com/productimagen1.jpg\"",
+                "\"https://ejemplo.com/productimagen2.jpg\"",
+                "\"https://ejemplo.com/productimagen3.jpg\"",
+                "\"https://ejemplo.com/productimagen4.jpg\"",
+                "\"https://ejemplo.com/productimagen5.jpg\""
+                ]
+                }
+
+        return JSON.stringify(oneProduct,null,2)
+    }
+
+    function addProduct(){
+        const productInInput = document.getElementById('param1').value;
+        
+        fetch('http://localhost:8080/api/products/',
+        {
+            method:'POST',
+            headers: {'Content-Type': 'application/json',},
+            body: JSON.stringify(productInInput),
+            mode: 'no-cors',
+        })
+}
+
+    function deleteProductById(){
+        const idForDelete = document.getElementById('param1').value;
+        fetch(`http://localhost:8080/api/products/${idForDelete}`,{method:'DELETE'})
+        .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error en la solicitud DELETE');
+                    }
+                    return response.json(); // O response.text(), según el formato de respuesta
+                })
+                .then(data => {
+                    alert('Solicitud Delete exitosa: ' + JSON.stringify(data));
+                })
+                .catch(error => {
+                    alert('Error en la solicitud Delete: ' + error.message);
+      });
+    }
+    
+
+       //-------------------------------------------------
+       function testIt(){
+      
+        const selectedTest = document.getElementById('testSelector').value
+        console.log('Selected test:', selectedTest)
+            
+            switch (selectedTest){
+                case '1': //'api/products'
+                    window.location.href = 'http://localhost:8080/api/products/'
+                    break
+                case '2': //Viene de parametro limit.
+                    solicitarGet('param1','http://localhost:8080/api/products/?limit=')
+                    break
+                case '3':
+                    solicitarGet('param1','http://localhost:8080/api/products/')
+                    break
+                case '4':
+                    alert('Aun no implementado.')//addProduct()
+                    break
+                case '5':
+                    alert('Aun no implementado.')//addProduct()
+                    break
+                case '6':
+                    deleteProductById()
+                    break
+                case '7':
+                    postCart()
+                    break
+                case '8':
+                    solicitarGet('param1','http://localhost:8080/api/carts/')
+                    break
+                    case '9':
+                    alert('Aun no implementado.')//addProduct()
+                    break
+                default:
+                    break
+            }
+
+
+       }
+
+
+      
+     </script>
+</body>
+</html>

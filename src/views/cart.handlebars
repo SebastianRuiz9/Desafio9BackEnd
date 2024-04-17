@@ -1,0 +1,102 @@
+
+
+<!--CONTAINER PAGE -->
+<div>
+     <!--BANNER SUPERIOR -->
+    <div class="w-full flex items-center pl-10 bg-blue-600 text-white object-fill py-4">
+      <p class="text-2xl leading-none">/</p>
+    </div>
+
+    <!--TITULO -->
+    <div class="w-full flex items-center pl-10 bg-white text-white py-10">
+      <p class="text-black text-2xl leading-none">PRODUCTOS EN CARRITO ID:{{cartId}}</p>
+    </div>
+
+    <!--CONTAINER TABLA PRODUCTOS EN CARRITO -->
+   
+   <div class="flex flex-col px-10 my-4 relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-1/2 mx-auto text-sm text-left rtl:text-right text-blue-100 dark:text-blue-100">
+        <!-- Ajusté el ancho de la tabla a w-1/2 (la mitad de la pantalla) y la centré con mx-auto -->
+
+        <thead class="text-xs text-white uppercase bg-blue-600 border-b border-blue-400 dark:text-white">
+            <tr>
+                <th scope="col" class="px-4 py-1 bg-blue-500">
+                    Id
+                </th>
+                <th scope="col" class="px-4 py-1 bg-blue-500">
+                    Titulo
+                </th>
+                <th scope="col" class="px-4 py-1 bg-blue-500">
+                    Imagen
+                </th>
+                <th scope="col" class="px-4 py-1 bg-blue-500">
+                    Precio
+                </th>
+                <th scope="col" class="px-4 py-1 bg-blue-500">
+                    Cantidad
+                </th>
+                <th scope="col" class="px-4 py-1 bg-blue-500">
+                    subTotal
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each productsList}}
+            <tr class="bg-white text-blue-500">
+                <th class="px-4 py-1">
+                    {{this.id}}
+                </th>
+                <td class="px-4 py-1">
+                    {{this.title}}
+                </td>
+                <td class="px-4 py-1">
+                    <div class="flex-shrink-0">
+                        <img class="w-6 h-6 rounded-full" src={{this.img}}>
+                        <!-- Ajusté el tamaño de la imagen con w-6 y h-6 -->
+                    </div>
+                </td>
+                <td class="px-4 py-1">
+                    {{this.price}}
+                </td>
+                <td class="px-4 py-1">
+                    {{this.quantity}}
+                </td>
+                <td class="px-4 py-1">
+                    {{this.totalAmount}}
+                </td>
+            </tr>
+            {{/each}}
+             <tr class="bg-white text-blue-500">
+                <th class="px-4 py-1">
+                    
+                </th>
+                <td class="px-4 py-1">
+                  
+                </td>
+                <td class="px-4 py-1">
+                   
+                </td>
+                <td class="px-4 py-1">
+                   
+                </td>
+                <td class="py-3 font-semibold text-gray-900 dark:text-white">
+                    TOTAL PRECIO CARRITO
+                </td>
+                <td class="py-3 font-semibold text-gray-900 dark:text-white">
+                   ${{cartAmount}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="flex items-end justify-end mt-10 font-semibold text-gray-900 dark:text-white">
+        <p>TOTAL PRECIO CARRITO: ${{cartAmount}}</p>
+    </div>
+</div>
+
+
+
+
+        
+    </div>
+    
+

@@ -1,0 +1,17 @@
+   <div class="flex items-center justify-center h-screen bg-gradient-to-r from-amber-200 via-yellow-300 to-yellow-300">
+        <div class="w-full max-w-xl flex flex-col">
+            <h1 class="text-3xl font-bold mb-5 drop-shadow-lg">E-COMMERCE CODERHOUSE BACKEND</h1>
+            <p class="font-bold mb-5 drop-shadow-lg text-right ml-auto">Guillermo Guardia</p>
+            <!-- SI NO HAY USER LOGUEADO MUESTRO PARA INICIAR/REGISTRAR-->
+            <div class="border rounded p-4 flex flex-row items-center justify-center space-x-4">
+                <a href="/api/sessions/login"  class="w-full max-w-xs text-sm px-4 py-2 leading-none border rounded border-white hover:border-transparent hover:text-teal-500 hover:bg-white">Iniciar sesión</a>
+                <a href="/api/sessions/registrarse" class="w-full max-w-xs text-sm px-4 py-2 leading-none border rounded border-white hover:border-transparent hover:text-teal-500 hover:bg-white">Registrarse</a>
+            </div>
+
+            {{>homeswipper}}
+     
+    
+        </div>
+
+    </div>
+

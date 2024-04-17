@@ -1,0 +1,42 @@
+
+
+<!--CONTAINER PAGE -->
+<div>
+
+
+     <!--BANNER SUPERIOR -->
+    <div class="w-full flex items-center pl-10 bg-blue-600 text-white object-fill py-4">
+      <p class="text-2xl leading-none">/</p>
+    </div>
+
+    <!--TITULO -->
+    <div class="w-full flex items-center pl-10 bg-white text-white py-10">
+      <p class="text-black text-2xl leading-none">PRODUCTOS EN STOCK</p>
+    </div>
+
+    <!--CONTAINER GRIDS PRODUCTS -->
+    <div class="py-10 px-5 grid grid-cols-6 gap-4 pb-10">
+        
+         {{#each productsList}}
+            <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <a href="/product/{{this.id}}">
+                    <img class="p-8 rounded-t-lg" src={{this.img}} alt={{this.title}} />
+                </a>
+                <div class="px-5 pb-5">
+                    <a href="#">
+                        <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{this.title}}</h5>
+                    </a>
+                    <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                        {{this.description}}
+                    </p>
+                    <div class="flex col items-center justify-between">
+                        <span class="text-3xl font-bold text-gray-900 dark:text-white">${{this.price}}</span>
+                       
+                    </div>
+                     <a href="#" class="text-white bg-blue-100 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-1 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    
+</div>

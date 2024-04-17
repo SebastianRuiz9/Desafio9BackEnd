@@ -1,0 +1,130 @@
+[
+ {
+  "productID": 15,
+  "title": "Producto 15",
+  "description": "Descripcion 15",
+  "price": 10693,
+  "code": "qrs19565f",
+  "stock": 50,
+  "status": true,
+  "thumbnails": [
+   "\"https://ejemplo.com/product15imagen1.jpg\"",
+   "\"https://ejemplo.com/product15imagen2.jpg\"",
+   "\"https://ejemplo.com/product15imagen3.jpg\"",
+   "\"https://ejemplo.com/product15imagen4.jpg\"",
+   "\"https://ejemplo.com/product15imagen5.jpg\""
+  ]
+ },
+ {
+  "productID": 16,
+  "title": "casco hjc",
+  "description": "una descripcion",
+  "code": "456aaa",
+  "price": "1",
+  "stock": "2",
+  "status": "true",
+  "thumbnails": [
+   "none",
+   "none"
+  ]
+ },
+ {
+  "productID": 17,
+  "title": "Casco Lazer24",
+  "description": "una descripcion",
+  "code": "234gty1",
+  "price": "1",
+  "stock": "1",
+  "status": "true",
+  "thumbnails": [
+   "none",
+   "none"
+  ]
+ },
+ {
+  "productID": 18,
+  "title": "Casco Lazer29",
+  "description": "una descripcion",
+  "code": "676fdhg11",
+  "price": "2",
+  "stock": "34",
+  "status": "true",
+  "thumbnails": [
+   "none",
+   "none"
+  ]
+ },
+ {
+  "productID": 19,
+  "title": "parlante jbl",
+  "description": "una descripcion",
+  "code": "2424567",
+  "price": "2",
+  "stock": "2",
+  "status": "true",
+  "thumbnails": [
+   "none",
+   "none"
+  ]
+ },
+ {
+  "productID": 21,
+  "title": "Mate",
+  "description": "una descripcion",
+  "code": "676fdhgmmmm",
+  "price": "2",
+  "stock": "2",
+  "status": "true",
+  "thumbnails": []
+ },
+ {
+  "productID": 22,
+  "title": "botella",
+  "description": "Casco Bicicleta",
+  "code": "676fdhgbbb",
+  "price": "0",
+  "stock": "2",
+  "status": "true",
+  "thumbnails": []
+ },
+ {
+  "productID": 23,
+  "title": "termo",
+  "description": "gorra",
+  "code": "676fdhgyyyyyyy",
+  "price": "1",
+  "stock": "1",
+  "status": "true",
+  "thumbnails": []
+ },
+ {
+  "productID": 24,
+  "title": "protectos",
+  "description": "una descripcion",
+  "code": "112234",
+  "price": "2",
+  "stock": "2",
+  "status": "true",
+  "thumbnails": []
+ },
+ {
+  "productID": 25,
+  "title": "",
+  "description": "",
+  "code": "",
+  "price": "",
+  "stock": "",
+  "status": "",
+  "thumbnails": []
+ },
+ {
+  "productID": 26,
+  "title": "Casco Lazer",
+  "description": "una descripcion",
+  "code": "87744112555",
+  "price": "2",
+  "stock": "3",
+  "status": "true",
+  "thumbnails": []
+ }
+]

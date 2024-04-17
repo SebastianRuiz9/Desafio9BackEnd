@@ -1,0 +1,23 @@
+  
+         <div class="shadow-lg text-black bg-lime-300 px-4 flex items-center justify-between flex-wrap space-x-5">
+         
+                <div class="px-4 flex items-center justify-between flex-wrap space-x-5">
+                    <div>
+                        <a href="/" class="inline-block text-sm px-4 py-2 leading-none  hover:border-transparent hover:text-teal-500">Home</a>
+                    </div>
+                     <div>
+                        <a href="#" class="inline-block text-sm px-4 py-2 leading-none  hover:border-transparent hover:text-teal-500">Categorias</a>
+                    </div>
+                     <div>
+                        <a href="#" class="inline-block text-sm px-4 py-2 leading-none  hover:border-transparent hover:text-teal-500">Ofertas</a>
+                    </div>
+                    <div>
+                        <a href="#" class="inline-block text-sm px-4 py-2 leading-none  hover:border-transparent hover:text-teal-500">Ayuda</a>
+                    </div>
+                    {{#if sessionData.admin}}
+                     <div>
+                        <a href="/realtimeproducts" class="inline-block text-sm px-4 py-2 leading-none  hover:border-transparent hover:text-teal-500">realTimeProducts</a>
+                    </div>
+                    {{/if}}
+               
+            </div>

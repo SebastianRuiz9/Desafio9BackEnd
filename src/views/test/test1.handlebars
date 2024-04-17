@@ -1,0 +1,44 @@
+
+
+<div>
+  
+  <div class="w-full flex items-center pl-10 bg-blue-800 text-white object-fill py-4">
+      <p class="text-2xl leading-none">Test Page</p>
+  </div>
+
+  
+  <div class="min-h-screen w-full bg-slate-800 px-8 py-10 grid grid-cols-3 gap-4">
+    <!-- Test1 -->
+    <div class="flex items-center justify-center bg-slate-500 p-4">
+        <form action="/api/products" method="get" class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+            <p class="text-xl font-semibold mb-4">GET /api/products</p>
+            <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">Testear</button>
+        </form>
+    </div>
+
+    <!-- Test2 -->
+    <div class="flex items-center justify-center bg-slate-500 p-4">
+        <form  id= "formtest1" method="get" class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+            <p class="text-xl font-semibold mb-4">GET /api/products/:limit</p>
+            <div class="mb-4">
+                <input id='form1-limit' type="number" placeholder="limit" required class="email-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:border-blue-500"/>
+            </div>
+            <button type='button' onclick="test1()" class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none">Testear</button>
+        </form>
+    </div>
+    
+  </div>
+
+
+</div>
+
+<script>
+    function test1(){ //hago el submit a mano
+        const formTest = document.getElementById('formtest1')
+        const limit = document.getElementById('form1-limit')
+        alert('ttrt')
+        //Si hay limit Hago un fetch enviando parametro , si no hay limit la hago directa.
+        fetch('http://localhost:8080/api/products')
+
+    }
+</script>

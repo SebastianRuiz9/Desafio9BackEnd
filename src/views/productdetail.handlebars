@@ -1,0 +1,178 @@
+
+
+<!--CONTAINER PAGE -->
+<div>
+     <!--BANNER SUPERIOR -->
+    <div class="w-full flex items-center pl-10 bg-blue-600 text-white object-fill py-4">
+      <p class="text-2xl leading-none">/productdetail</p>
+    </div>
+
+    <!--CONTAINER GRIDS PRODUCTS -->
+   <div class="text-gray-700 body-font overflow-hidden bg-white">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="lg:w-4/5 mx-auto flex flex-wrap">
+            <img class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src={{productDetail.img}}>
+            <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+                <h2 class="text-sm title-font text-gray-500 tracking-widest">{{productDetail.category}}</h2>
+                <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{productDetail.title}}</h1>
+                <div class="flex mb-4">
+                <span class="flex items-center">
+                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                    <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                    <span class="text-gray-600 ml-3">4 Reviews</span>
+                    <span class="text-gray-600 ml-3">Codigo: {{productDetail.code}}</span>
+                </span>
+                <span class="flex ml-3 pl-3 py-2 border-l-2 border-gray-200">
+                    <a class="text-gray-500">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                    </a>
+                    <a class="ml-2 text-gray-500">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                    </svg>
+                    </a>
+                    <a class="ml-2 text-gray-500">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                    </svg>
+                    </a>
+                </span>
+                </div>
+
+                <p class="leading-relaxed">Id: {{productDetail.id}}</p>
+                <p class="leading-relaxed">{{productDetail.description}}</p>
+                <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
+              
+               
+                      <div class="flex mb-4">
+                        <span class="flex items-center">
+                   
+               
+                    <span class="text-gray-600 ml-3">Codigo: {{productDetail.code}}</span>
+                    <span class="text-gray-600 ml-3">Stock: {{productDetail.stock}}</span>
+                </span>
+          
+                </div>
+
+
+
+
+
+                </div>
+                <div class="flex">
+                <span class="title-font font-medium text-2xl text-gray-900">${{productDetail.price}}</span>
+               
+                   <!--AGREGADO A CARRITO-->
+                            <form action="/api/carts/{{sessionData.user.cart}}/products/{{productDetail.id}}"
+                                method="post">
+
+                                <div class="w-full flex flex-col items-center gap-2">
+                                    <label for="quantity" class="text-sm font-medium text-white">Cantidad por pagina:</label>
+                                    <input type="number" id="inputQuantity" name="quantity"  
+                                    class="text-black border rounded-md px-2 py-1 text-sm leading-5 focus:outline-none focus:ring focus:border-blue-300">
+                                
+                                    <button type="submit" class="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">Add to cart</button>
+                                </div>
+                            
+                            
+                            </form>
+
+
+                             <form  class="my-3 border border-slate-200 p-3 flex flex-col items-center space-y-1">
+                            
+                            <div  class="flex w-full justify-around">
+                                <label for="counter-input" class="block text-sm font-medium text-gray-900 dark:text-white">Cantidad</label>
+                                <div class="relative flex items-center">
+                                    <button type="button" id="decrement-button-{{productDetail.id}}" onclick="decrementCounterQuantity(`{{productDetail.id}}`)"  class="flex-shrink-0 bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+                                        <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
+                                        </svg>
+                                    </button>
+                                    <input type="number"  id="counter-input-{{productDetail.id}}" class="flex-shrink-0 text-gray-900 dark:text-white border-0 bg-transparent text-sm font-normal focus:outline-none focus:ring-0 max-w-[2.5rem] text-center" value="1" required />
+                                    <button type="button" id="increment-button-{{productDetail.id}}" onclick="incrementCounterQuantity(`{{productDetail.id}}`,`{{productDetail.stock}}`)"  class="flex-shrink-0 bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+                                        <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            
+                            <p class="text-sm text-gray-500 truncate dark:text-gray-400">({{productDetail.stock}} disponibles)</p>
+                            
+                            <button id={{productDetail.id}} type="button" onclick="addThisProduct(event)"  class="text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-1 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agregar al carrito</button>
+                        
+                        </form>
+
+
+                </div>
+            </div>
+            </div>
+        </div>
+</div>
+    
+</div>
+
+
+
+
+<script>
+
+
+alert('Holaaaaa')
+
+   
+function decrementCounterQuantity(id){
+    //Ya tengo el id y el stock del producto a cual quiero modificar la cantidad de su contador.
+    //capturo su contador con su id ya que sabemos que su contador se llama id="decrement-button-{{this.id}}"
+    const selectedInput = document.getElementById(`counter-input-${id}`)
+    //Le resto y cambio el valor numerico si es mayor a 2
+    if (selectedInput.value >= 2) selectedInput.value = Number(selectedInput.value) - 1
+}
+
+function incrementCounterQuantity(id,stock){
+    //Ya tengo el id y el stock del producto a cual quiero modificar la cantidad de su contador.
+    //capturo su contador con su id ya que sabemos que su contador se llama id="decrement-button-{{this.id}}"
+    const selectedInput = document.getElementById(`counter-input-${id}`)
+    //Le resto y cambio el valor numerico si es mayor a 2
+    if (selectedInput.value < Number(stock)) selectedInput.value = Number(selectedInput.value) + 1
+}
+
+function addThisProduct(event){
+ 
+      //sabemos que el boton tiene el id del producto x lo tanto tenemos el id del producto a agregar
+    //sabemos que el input quantity del producto se llama id="counter-input-{{this.id}}" entonces podemos obtener su valor
+    const productId = event.target.id
+    const selectedQuantityInput = document.getElementById(`counter-input-${productId}`)
+
+    const selectedQuantity = selectedQuantityInput.value
+    console.log(selectedQuantity)
+  
+    //con estos datos podemos hacer la solicitud http usando fetch
+    //Y de acuerdo a lo que envia el server mando una notiicacion de tostify
+      fetch(`/api/carts/${cartId}/products/${productId}`,{method:'POST', headers: {'Content-Type': 'application/json'},body: JSON.stringify({ quantity: selectedQuantity })})
+      .then(result => result.json())
+      .then(json => {
+        showNotification(`Se agregaron ${selectedQuantityInput} unidades del producto seleccionado a su carrito !`)
+        console.log(json.message)
+        //redirijo para que se renderice tddo y actualice cantidades.
+        window.location.href = '/products';
+        })
+}
+
+</script>

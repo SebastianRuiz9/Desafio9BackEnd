@@ -1,0 +1,55 @@
+<!--CONTAINER PAGE -->
+<div>
+  <!--BANNER SUPERIOR -->
+    <div class="w-full flex items-center pl-10 bg-blue-600 text-white object-fill py-4">
+      <p class="text-2xl leading-none">/realTimeProducts</p>
+    </div>
+
+
+
+
+  <!--CONTAINER FORM Y CATALOGO -->
+  <div class="flex row">
+      
+      <!--CONTAINER FORM -->
+      <div class="w-1/6 bg-slate-100">
+          <form id="addProductsForm" enctype="multipart/form-data" method="post"
+              class="px-4 pb-10 bg-sky-600" type="submit">
+            <p class="text-center text-white text-1xl font-bold text-gray-900 py-10">
+                Agregar un producto
+            </p>
+            <input type="text" id="input-title" placeholder="Titulo" required class="px-2 py-1 mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-sky-500 sm:text-sm"/>
+            <input type="text" id="input-description" placeholder="Description" required class="px-2 py-1 mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-sky-500 sm:text-sm" />
+            <input type="text" id="input-code" placeholder="Codigo" required class="px-2 py-1 mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-sky-500 sm:text-sm"/>
+            <input type="number" id="input-price" placeholder="Precio" required class="px-2 py-1 mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-sky-500 sm:text-sm"/>
+            <input type="number" id="input-stock" placeholder="Stock" required class="px-2 py-1 mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-sky-500 sm:text-sm"/>
+             <select id="input-category" required class="px-2 py-1 mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-sky-500 sm:text-sm">
+                <option value="" disabled selected>Category</option>
+                <option value="categoria1">Categoria 1</option>
+                <option value="categoria2">Categoria 2</option>
+                <option value="categoria3">Categoria 3</option>
+                <option value="categoria4">Categoria 4</option>
+            </select>
+             <select id="input-status" required class="px-2 py-1 mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-sky-500 sm:text-sm">
+                <option value="" disabled selected>Status</option>
+                <option value="true">Activo</option>
+                <option value="false">Inactivo</option>
+            </select>
+            <input name ='img' id="input-img" type="file"  class="px-2 py-1 mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-sky-500 sm:text-sm"/>
+            <input id="input-thumbnails" type="file" disabled class="px-2 py-1 mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-sky-500 focus:outline-none focus:ring-sky-500 sm:text-sm"/>
+            <button type="submit" id="btnEnviar" class="my-10 flex w-full justify-center rounded-md border border-transparent bg-sky-400 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2">Aceptar</button>
+        </form>
+      </div>
+  
+      
+      <!--CONTAINER CATALOGO-->
+      <div class="w-5/6 px-10 py-10">
+             <div id="containerproducts" class="grid grid-cols-6 gap-4" >
+               <!--Aca la productList viene a travez de manipulacion de DOM.-->
+             </div>
+      </div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+<script src="realTimeProducts.js"></script>

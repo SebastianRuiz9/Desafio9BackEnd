@@ -1,0 +1,251 @@
+
+<!--CONTAINER PAGE -->
+<div>
+
+     <!--BANNER SUPERIOR -->
+    <div class="px-4 py-2 w-full flex justify-between items-center pl-10 bg-blue-600 text-white object-fill">
+      <p class="text-2xl ">/products</p>
+   
+    </div>
+
+         <div class="px-4 w-full flex  space-x-10 bg-slate-600 py-2 text-teal-300">
+                    <p class="text-sm font-small">Total productos: {{totalDocs}}</p>
+                    <p class="text-sm font-small">Cantidad por pagina: {{limit}}</p>
+                    <p class="text-sm font-small">Total paginas: {{totalPages}}</p>
+                    <p class="text-sm font-small">Pagina actual: {{actualPage}}</p>
+                    <p class="text-sm font-small">Prev page: {{prevPage}}</p>
+                    <p class="text-sm font-small">Next page: {{nextPage}} </p>
+            </div>
+    
+    <!--CONTAINER FORM Y PRODUCTOS -->
+      <div class="flex row">
+     <!--FORM -->
+            <div class="w-1/6 bg-slate-100">
+                    <!-- Datos paginacion -->
+        
+                
+                <form id='paginationForm' action = '/products' method="get" class="shadow-lg bg-lime-400 p-4 flex flex-col space-y-6">
+                    
+                    <div class="w-full flex items-center gap-2">
+                        <label for="sort" class="text-sm font-medium text-white">Ordenar por precio:</label>
+                        <select type="select" id="sort" name="sort" class="text-black border rounded-md px-3 py-1 text-sm leading-5 focus:outline-none focus:ring focus:border-blue-300">
+                            <option value="0">Sin ordenar</option>
+                            <option value="1">Ascendente</option>
+                            <option value="-1">Descendente</option>
+                        </select>
+                    </div>
+
+                    <div class="w-full flex items-center gap-2">
+                        <label for="inputLimit" class="text-sm font-medium text-white">Cantidad por pagina:</label>
+                        <input type="number" id="inputLimit" name="limit" value={{limit}} min="10" max={{totalDocs}}
+                            class="text-black border rounded-md px-2 py-1 text-sm leading-5 focus:outline-none focus:ring focus:border-blue-300">
+                    </div>
+
+                                        
+
+                    <div class="w-full flex flex-col items-center gap-2">
+                        <label for="rangePrice" class="text-sm font-medium text-white">Rango de precio:</label>
+                        <div class="flex items-end text-sm font-medium text-white gap-2">
+                            <input name="rangePrice" class="w-full" type="range" id="rangePrice" min="0" max="500000" step="1" value="0">
+                            <span id="rangeValue">0</span>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="w-full flex items-end justify-center gap-2">
+                        <label for="inputPage" class="text-sm font-medium text-white">Página:</label>
+                        <input type="number" id="inputPage" name="page" value={{actualPage}} min="1" max={{totalPages}}
+                            class="text-black border rounded-md px-2 py-1 text-sm leading-5 focus:outline-none focus:ring focus:border-blue-300">
+                    </div>
+                    
+              
+                    <div class="flex space-x-2">
+                        <button id ='buttonPrev' type="button" class="bg-green-300 text-gray-600 px-3  rounded-md hover:bg-gray-400 focus:outline-none focus:ring focus:border-blue-300">
+                                ◀ Anterior 
+                        </button>
+                         <button id ='buttonGo' type="submit" class="bg-blue-500 text-white px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">
+                            Ir
+                    </button>
+                        <button id ='buttonNext' type="button" class="bg-green-300 text-gray-600 px-3  rounded-md hover:bg-gray-400 focus:outline-none focus:ring focus:border-blue-300">
+                                Siguiente ▶
+                        </button>
+                        </div>
+                    </form>
+         
+            </div>
+
+            
+            <!--CONTAINER GRIDS PRODUCTS -->
+            <div class="w-5/6 py-10 px-5 grid grid-cols-6 gap-4 pb-10">
+                
+                {{#each productsList}}
+                    <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <a href="/product/{{this.id}}">
+                            <img class="p-8 rounded-t-lg" src={{this.img}} alt={{this.title}} />
+                        </a>
+                        <div class="px-5 pb-5">
+                            <a href="#">
+                                <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{{this.title}}</h5>
+                            </a>
+                            <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                                {{this.description}}
+                            </p>
+                            <div class="flex col items-center justify-between">
+                                <span class="text-3xl font-bold text-gray-900 dark:text-white">${{this.price}}</span>
+                            
+                            </div>
+
+                          
+
+                            <!--AGREGADO A CARRITO-->
+                  
+
+
+                        <form  class="my-3 border border-slate-200 p-3 flex flex-col items-center space-y-1">
+                            
+                            <div  class="flex w-full justify-around">
+                                <label for="counter-input" class="block text-sm font-medium text-gray-900 dark:text-white">Cantidad</label>
+                                <div class="relative flex items-center">
+                                    <button type="button" id="decrement-button-{{this.id}}" onclick="decrementCounterQuantity(`{{this.id}}`)"  class="flex-shrink-0 bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+                                        <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
+                                        </svg>
+                                    </button>
+                                    <input type="number"  id="counter-input-{{this.id}}" class="flex-shrink-0 text-gray-900 dark:text-white border-0 bg-transparent text-sm font-normal focus:outline-none focus:ring-0 max-w-[2.5rem] text-center" value="1" required />
+                                    <button type="button" id="increment-button-{{this.id}}" onclick="incrementCounterQuantity(`{{this.id}}`,`{{this.stock}}`)"  class="flex-shrink-0 bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+                                        <svg class="w-2.5 h-2.5 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            
+                            <p class="text-sm text-gray-500 truncate dark:text-gray-400">({{this.stock}} disponibles)</p>
+                            
+                            <button id={{this.id}} type="button" onclick="addThisProduct(event)"  class="text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-1 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agregar al carrito</button>
+                             <button id='{comprar${{{this.id}}}' type="button" onclick="showNotificationInfo('error')"  class="text-white bg-red-500 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-1 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Comprar ahora</button>
+                        </form>
+
+
+
+                          
+                           
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+            
+        </div>
+
+
+
+
+</div>
+
+
+<script>
+
+
+
+}
+    
+    //Manejo de los botones anterior y siguiente.
+    //Valores que arrojo la paginafion y usaremos para manejar algunas cosas en el form.
+    const {docs,page,hasPrevPage,hasNextPage} = {{{valuesToScript}}}
+    const {cart:cartId} = {{{valuesSession}}}
+    console.log(cartId)
+
+
+    const paginationForm = document.getElementById('paginationForm')
+    const buttonGo = document.getElementById('buttonGo')
+    const buttonPrev = document.getElementById('buttonPrev')
+    const buttonNext = document.getElementById('buttonNext')
+    const inputLimit = document.getElementById('inputLimit')
+    const inputPage = document.getElementById('inputPage')
+
+    //Boton ir hace la solicitud normal.
+    buttonNext.addEventListener('click',(event)=>{
+        
+        //Antes de hacer el submit cambio el valor de page para que llegue 1 mas
+        event.preventDefault()
+        const numActualPage = inputPage.value
+        //Solo avanzo la pagina si existe pagina siguiente.
+        if (hasNextPage){
+                  inputPage.value = Number(numActualPage) + 1
+                    paginationForm.submit()
+        }  
+        })
+
+     buttonPrev.addEventListener('click',(event)=>{
+        
+        //Antes de hacer el submit cambio el valor de page para que llegue 1 mas
+        event.preventDefault()
+        const numActualPage = inputPage.value
+        //Solo avanzo la pagina si existe pagina siguiente.
+        if (hasPrevPage){
+                  inputPage.value = Number(numActualPage) - 1
+                    paginationForm.submit()
+        }  
+        })
+
+
+    //Range precio
+      // Obtener elementos del DOM
+        const rangePrice = document.getElementById('rangePrice');
+        const rangeValue = document.getElementById('rangeValue');
+
+  // Manejar el evento de cambio en el input tipo range
+  rangePrice.addEventListener('input', function() {
+    // Actualizar el valor en el label o input
+    rangeValue.textContent = this.value;
+    // Si prefieres usar un input en lugar de un span, puedes usar la siguiente línea:
+    // rangeValue.value = this.value;
+  });
+ 
+
+   
+function decrementCounterQuantity(id){
+    //Ya tengo el id y el stock del producto a cual quiero modificar la cantidad de su contador.
+    //capturo su contador con su id ya que sabemos que su contador se llama id="decrement-button-{{this.id}}"
+    const selectedInput = document.getElementById(`counter-input-${id}`)
+    //Le resto y cambio el valor numerico si es mayor a 2
+    if (selectedInput.value >= 2) selectedInput.value = Number(selectedInput.value) - 1
+}
+
+function incrementCounterQuantity(id,stock){
+    //Ya tengo el id y el stock del producto a cual quiero modificar la cantidad de su contador.
+    //capturo su contador con su id ya que sabemos que su contador se llama id="decrement-button-{{this.id}}"
+    const selectedInput = document.getElementById(`counter-input-${id}`)
+    //Le resto y cambio el valor numerico si es mayor a 2
+    if (selectedInput.value < Number(stock)) selectedInput.value = Number(selectedInput.value) + 1
+}
+
+function addThisProduct(event){
+ 
+      //sabemos que el boton tiene el id del producto x lo tanto tenemos el id del producto a agregar
+    //sabemos que el input quantity del producto se llama id="counter-input-{{this.id}}" entonces podemos obtener su valor
+    const productId = event.target.id
+    const selectedQuantityInput = document.getElementById(`counter-input-${productId}`)
+
+    const selectedQuantity = selectedQuantityInput.value
+    console.log(selectedQuantity)
+  
+    //con estos datos podemos hacer la solicitud http usando fetch
+    //Y de acuerdo a lo que envia el server mando una notiicacion de tostify
+      fetch(`/api/carts/${cartId}/products/${productId}`,{method:'POST', headers: {'Content-Type': 'application/json'},body: JSON.stringify({ quantity: selectedQuantity })})
+      .then(result => result.json())
+      .then(json => {
+        showNotification(`Se agregaron ${selectedQuantity} unidades del producto seleccionado a su carrito !`)
+        console.log(json.message)
+        //redirijo para que se renderice tddo y actualice cantidades.
+        window.location.href = '/products';
+        })
+}
+
+function showNotificationInfo(text){
+    toast.info(text)
+}
+
+</script>
